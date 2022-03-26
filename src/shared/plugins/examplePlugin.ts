@@ -1,5 +1,6 @@
 import type { InjectionKey, Plugin } from 'vue';
 import { vFocus } from './vFocus';
+import FancyButton from './FancyButton.vue';
 
 declare module 'vue' {
   interface ComponentCustomProperties {
@@ -19,5 +20,6 @@ export const examplePlugin: Plugin = {
 
     app.provide(symGreeting, greeting);
     app.directive('focus', vFocus);
+    app.component('fancyButton', FancyButton);
   },
 };
