@@ -1,7 +1,10 @@
 <template>
   <h1>{{ $greeting('Jean') }}</h1>
   <input v-focus="{ firstFocus: true, color: 'green' }" type="text" />
-  <FancyButton />
+
+  <div>
+    <FancyButton />
+  </div>
 </template>
 
 <script setup lang="ts">

@@ -20,6 +20,6 @@ export const examplePlugin: Plugin = {
 
     app.provide(symGreeting, greeting);
     app.directive('focus', vFocus);
-    app.component('fancyButton', FancyButton);
+    app.component('FancyButton', FancyButton);
   },
 };
