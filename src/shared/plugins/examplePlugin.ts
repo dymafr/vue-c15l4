@@ -1,4 +1,5 @@
 import type { InjectionKey, Plugin } from 'vue';
+import { vFocus } from './vFocus';
 
 declare module 'vue' {
   interface ComponentCustomProperties {
@@ -17,5 +18,6 @@ export const examplePlugin: Plugin = {
     app.config.globalProperties.$greeting = greeting;
 
     app.provide(symGreeting, greeting);
+    app.directive('focus', vFocus);
   },
 };
