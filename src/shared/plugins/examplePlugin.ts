@@ -2,6 +2,8 @@ import type { Plugin } from 'vue';
 
 export const examplePlugin: Plugin = {
   install: (app, options) => {
-    // Plugin code goes here
+    app.config.globalProperties.$greeting = (name: string) => {
+      return `Bonjour ${name} !`;
+    };
   },
 };
