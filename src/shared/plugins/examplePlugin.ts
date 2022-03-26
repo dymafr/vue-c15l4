@@ -1,4 +1,4 @@
-import type { Plugin } from 'vue';
+import type { InjectionKey, Plugin } from 'vue';
 
 declare module 'vue' {
   interface ComponentCustomProperties {
@@ -6,10 +6,16 @@ declare module 'vue' {
   }
 }
 
+export const symGreeting = Symbol() as InjectionKey<(name: string) => string>;
+
 export const examplePlugin: Plugin = {
   install: (app, options) => {
-    app.config.globalProperties.$greeting = (name: string) => {
+    const greeting = (name: string) => {
       return `Bonjour ${name} !`;
     };
+
+    app.config.globalProperties.$greeting = greeting;
+
+    app.provide(symGreeting, greeting);
   },
 };
